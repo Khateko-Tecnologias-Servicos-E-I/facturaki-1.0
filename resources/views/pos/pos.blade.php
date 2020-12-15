@@ -123,8 +123,8 @@
                         </h5>
                         @endif
                     <select class="form-control" name="customer_id" id="customer_id">
-                        <option value="" disabled="" selected="">Select a customer</option>
-                        <option value="newcustomer">Add a New Customer</option>
+                        <option value="" disabled="" selected="">Seleciona o Cliente</option>
+                        <option value="newcustomer">Adicionar novo Cliente</option>
                         @foreach($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                         @endforeach

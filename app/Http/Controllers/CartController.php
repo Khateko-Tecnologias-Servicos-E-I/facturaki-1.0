@@ -20,13 +20,13 @@ class CartController extends Controller
     	$cart = Cart::add($data);
     	if($cart){
     		$notification = array(
-	            'messege' => 'Cart added Successful',
+	            'messege' => 'Item adicionado com sucesso',
 	            'alert-type' => 'success',
 	        );
     		return redirect()->back()->with($notification);
     	}else{
     		$notification = array(
-	            'messege' => 'Ups..Cart not Added',
+	            'messege' => 'Ups..Item não adicionado',
 	            'alert-type' => 'error',
 	        );
 	        return redirect()->back()->with($notification);
@@ -43,7 +43,7 @@ class CartController extends Controller
     {
     	Cart::remove($id);
 		$notification = array(
-            'messege' => 'Cart Remove Successful',
+            'messege' => 'Item removido com sucesso',
             'alert-type' => 'success',
         );
         return back()->with($notification);
@@ -54,7 +54,7 @@ class CartController extends Controller
         $request->validate([
             'customer_id' => 'required'
         ],[
-            'customer_id.required' => 'Select a customer first'
+            'customer_id.required' => 'Por favor, seleciona o cliente'
         ]);
         $customer = Customer::where('id',$request->customer_id)->first();
         $contents = Cart::content();

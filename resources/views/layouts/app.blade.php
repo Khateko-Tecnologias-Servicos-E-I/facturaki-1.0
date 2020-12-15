@@ -54,11 +54,11 @@
                             <span class="text-muted text-xs block">Cargo de Utilizador<b class="caret"></b></span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-                            <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Perfil</a></li>
+                            <li><a class="dropdown-item" href="contacts.html">Contactos</a></li>
                             <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
                             <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="logout">Logout</a></li>
+                            <li><a class="dropdown-item" href="logout">Sair</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
@@ -66,7 +66,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="{{ route('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> </a>
+                    <a href="{{ route('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
                     <a href="{{ route('pos') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">POS</span> </a>
                 </li>
 
@@ -185,7 +185,7 @@
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
                     <form role="search" class="navbar-form-custom" action="search_results.html">
                         <div class="form-group">
-                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                            <input type="text" placeholder="Busca..." class="form-control" name="top-search" id="top-search">
                         </div>
                     </form>
                 </div>
@@ -326,7 +326,7 @@
                 {{--10GB of <strong>250GB</strong> Free.--}}
             </div>
             <div>
-                <strong>Desenvolvido por</strong> <a href="https://khateko.com" target="_blank">Khateko Tecnologias & Servicos </a> &copy; 2020
+                <strong>&copy; 2021 FacturAki</strong> um produto da <a href="https://khateko.com" target="_blank">Khateko Tecnologias & Servicos </a>
             </div>
         </div>
         </div>

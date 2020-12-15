@@ -17,12 +17,12 @@ class OrderController extends Controller
         $pay = $request->pay;
         $dis_price = 100 - $pay;
     	$data = array();
-    	$data['customer_id'] = $request->customer_id; 
-    	$data['order_date'] = $request->order_date; 
-    	$data['order_status'] = $request->order_status; 
-    	$data['total_product'] = $request->total_product; 
-    	$data['subtotal'] = $request->subtotal; 
-    	$data['vat'] = $request->vat; 
+    	$data['customer_id'] = $request->customer_id;
+    	$data['order_date'] = $request->order_date;
+    	$data['order_status'] = $request->order_status;
+    	$data['total_product'] = $request->total_product;
+    	$data['subtotal'] = $request->subtotal;
+    	$data['vat'] = $request->vat;
     	$data['total'] = $request->total;
     	$data['payment_status'] = $request->payment_status;
     	$data['pay'] = $request->pay;
@@ -43,14 +43,14 @@ class OrderController extends Controller
     	}
     	if($order){
     		$notification = array(
-	            'messege' => 'Successfully Invoice created | Please delever the products first',
+	            'messege' => 'Factura registada com sucesso',
 	            'alert-type' => 'success',
 	        );
 	        Cart::destroy();
     		return redirect('/')->with($notification);
     	}else{
     		$notification = array(
-	            'messege' => 'Ups..Invoice not created',
+	            'messege' => 'Ups..Factura não registada',
 	            'alert-type' => 'error',
 	        );
 	        return redirect()->back()->with($notification);
@@ -96,14 +96,14 @@ class OrderController extends Controller
 
         if($approve){
             $notification = array(
-                'messege' => 'Successfully Order Confirmed | and All product delevered..',
+                'messege' => 'Factura confirmada com sucesso.',
                 'alert-type' => 'success',
             );
             Cart::destroy();
             return redirect('/shipped_order')->with($notification);
         }else{
             $notification = array(
-                'messege' => 'Ups..Invoice not created',
+                'messege' => 'Ups..Factura não criada',
                 'alert-type' => 'error',
             );
             return redirect()->back()->with($notification);
