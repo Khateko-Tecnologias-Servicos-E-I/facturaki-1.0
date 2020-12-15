@@ -27,13 +27,13 @@ class ProductController extends Controller
     	$this->storeImage($product);
     	if($product){
     		$notification = array(
-	            'messege' => 'Product added Successful',
+	            'messege' => 'Produto registado com sucesso',
 	            'alert-type' => 'success',
 	        );
     		return redirect()->back()->with($notification);
     	}else{
     		$notification = array(
-	            'messege' => 'Ups..Product not Added',
+	            'messege' => 'Ups..Produto não adicionado',
 	            'alert-type' => 'error',
 	        );
 	        return redirect()->back()->with($notification);
@@ -50,20 +50,20 @@ class ProductController extends Controller
 
     public function update(Product $product)
     {
-    	if($product->image){
-    		unlink('storage/app/public/'.$product->image);
-    	}
+//    	if($product->image){
+//    		unlink('storage/app/public/'.$product->image);
+//    	}
     	$product->update($this->validateRequest());
     	$this->storeImage($product);
     	if($product){
     		$notification = array(
-	            'messege' => 'Product Updated Successful',
+	            'messege' => 'Produto editado com sucesso',
 	            'alert-type' => 'success',
 	        );
     		return redirect('all_product')->with($notification);
     	}else{
     		$notification = array(
-	            'messege' => 'Ups..Product not Updated',
+                'messege' => 'Ups..Produto não adicionado',
 	            'alert-type' => 'error',
 	        );
 	        return redirect('all_product')->back()->with($notification);
@@ -72,17 +72,17 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
-    	unlink('storage/app/public/' . $product->image);
+//    	unlink('storage/app/public/' . $product->image);
     	$product->delete();
     	if($product){
     		$notification = array(
-	            'messege' => 'Product Deleted Successful',
+	            'messege' => 'Produto removido com sucesso',
 	            'alert-type' => 'success',
 	        );
     		return redirect()->back()->with($notification);
     	}else{
     		$notification = array(
-    		    'messege' => 'Ups..Product not Delete',
+                'messege' => 'Ups..Produto não removido',
 	            'alert-type' => 'error',
 	        );
 	        return redirect()->back()->with($notification);
@@ -98,12 +98,12 @@ class ProductController extends Controller
             'supplier_id'=>'required',
             'product_code'=>'required',
             'product_garage'=>'required',
-            'product_route'=>'required',
-            'buy_date'=>'required',
-            'expire_date'=>'required',
+//            'product_route'=>'required',
+//            'buy_date'=>'required',
+//            'expire_date'=>'required',
             'buying_price'=>'required',
             'selling_price'=>'required',
-            'image'=>'sometimes|file|image|max:6000',
+//            'image'=>'sometimes|file|image|max:6000',
         ]);
     }
 
